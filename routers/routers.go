@@ -12,7 +12,7 @@ func InitRouter() *gin.Engine {
 	r := gin.Default()
 	r.StaticFS("/upload", http.Dir(upload.GetImageFullPath()))
 	gin.SetMode(setting.ServerSetting.RunMode)
-	apiv1 := r.Group("/api/v1")
+	apiv1 := r.Group("/api")
 	v1.Api(apiv1)
 	return r
 }
